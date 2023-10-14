@@ -53,7 +53,6 @@ const UsersList = () => {
         </div>
         <div className="relative">
           <select
-          onChange={(e)=>setSort(e.target.value)}
             className="w-[150px] md:w-[200px] mt-2 p-2.5 text-mainText bg-blackBg border rounded-md shadow-sm outline-none appearance-none focus:border-indigo-600"
           >
             <option>Sort by value</option>
