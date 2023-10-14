@@ -34,8 +34,7 @@ const UsersList = () => {
     }
   };
   if (isLoading) return <Loader />;
-  console.log(users);
-
+;
   return (
     <>
       <div className="flex gap-6 justify-between mt-16 p-5">

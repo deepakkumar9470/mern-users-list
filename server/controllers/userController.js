@@ -92,10 +92,10 @@ module.exports.getUsers = async (req, res) =>{
     let sortQuery ={}
  
      if (sort === "Last modified") {
-        sortQuery = sortQuery.sort("-updatedAt");
+        sortQuery ={updatedAt :-1}
       }
       if (sort === "Last Inserted") {
-        sortQuery = { updatedAt: 1 };
+        sortQuery = { createdAt: 1 };
       }
       if (sort === "A-Z") {
         sortQuery = {createdAt :1}

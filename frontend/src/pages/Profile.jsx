@@ -2,6 +2,7 @@ import React,{useEffect, useState} from 'react'
 import {Facebook, Github,Twitter,Youtube,Pencil} from 'lucide-react'
 import { Link ,useNavigation,useParams} from 'react-router-dom';
 import axios from 'axios';
+import { BASE_URL } from '../services/helper';
 
 
 const Profile = () => {
@@ -13,9 +14,7 @@ const Profile = () => {
 	useEffect(() => {
 		const getUserById =  async () =>{
 			 try {
-			  const res = await axios.get(`http://localhost:5000/api/user/${id}`)
-			  console.log(res)
-			 
+			  const res = await axios.get(`${BASE_URL}/api/user/${id}`)
 			 if(res.status === 200){
 			  setUser(res.data)
 			 }
@@ -26,7 +25,6 @@ const Profile = () => {
 		 getUserById()
 	
 	  }, [id])
-	// console.log(user)
   return (
 
     <div className="w-[50%] flex flex-col items-center justify-center mt-20 mx-auto p-5 shadow-md rounded-xl sm:px-12 bg-gray-900 text-gray-100">
